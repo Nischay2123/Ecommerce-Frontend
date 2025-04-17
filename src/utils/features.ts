@@ -55,6 +55,6 @@ export const getLastMonths = () => {
 };
 
 export const transformImage = (url: string) => {
-  const newUrl = `http://localhost:3000${url.replace("uploads", "/uploads")}`;
+  const newUrl = `https://ecommerce-backend-d68f.onrender.com${url.replace("uploads", "/uploads")}`;
   return newUrl;
 };
