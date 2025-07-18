@@ -21,14 +21,13 @@ const Productmanagement = () => {
 
   const { data, isLoading, isError } = useProductDetailsQuery(params.id!);
 
-  const { price, photo, name, stock, category, description } =
+  const { price, photo, name, stock, category } =
     data?.product || {
       photos: "",
       category: "",
       name: "",
       stock: 0,
       price: 0,
-      description: "",
     };
 
   const [btnLoading, setBtnLoading] = useState<boolean>(false);
@@ -36,8 +35,7 @@ const Productmanagement = () => {
   const [stockUpdate, setStockUpdate] = useState<number>(stock);
   const [nameUpdate, setNameUpdate] = useState<string>(name);
   const [categoryUpdate, setCategoryUpdate] = useState<string>(category);
-  const [descriptionUpdate, setDescriptionUpdate] =
-    useState<string>(description);
+
 
   const [updateProduct] = useUpdateProductMutation();
   const [deleteProduct] = useDeleteProductMutation();
@@ -52,7 +50,6 @@ const Productmanagement = () => {
       const formData = new FormData();
 
       if (nameUpdate) formData.set("name", nameUpdate);
-      if (descriptionUpdate) formData.set("description", descriptionUpdate);
       if (priceUpdate) formData.set("price", priceUpdate.toString());
       if (stockUpdate !== undefined)
         formData.set("stock", stockUpdate.toString());
@@ -94,7 +91,6 @@ const Productmanagement = () => {
       setPriceUpdate(data.product.price);
       setStockUpdate(data.product.stock);
       setCategoryUpdate(data.product.category);
-      setDescriptionUpdate(data.product.description);
     }
   }, [data]);
 
