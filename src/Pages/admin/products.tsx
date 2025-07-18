@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Column } from "react-table";
 import { useAllProductsQuery } from "../../redux/api/productAPI";
-import { RootState, server } from "../../redux/store";
+import { RootState } from "../../redux/store";
 import { CustomError } from "../../types/api-types";
 import TableHOC from "../../Components/admin/TableHOC";
 import AdminSidebar from "../../Components/admin/AdminSidebar";
@@ -58,7 +58,7 @@ const Products = () => {
     if (data)
       setRows(
         data.products.map((i) => ({
-          photo: <img src={`${server}/${i.photo}`}/>,
+          photo: <img src={i.photo}/>,
           name: i.name,
           price: i.price,
           stock: i.stock,

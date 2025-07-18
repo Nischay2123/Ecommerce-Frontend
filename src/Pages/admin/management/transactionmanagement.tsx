@@ -8,9 +8,9 @@ import {
 } from "../../../redux/api/orderAPI";
 import { RootState} from "../../../redux/store";
 import { Order, OrderItem } from "../../../types/types";
-import { responseToast, transformImage } from "../../../utils/features";
 import AdminSidebar from "../../../Components/admin/AdminSidebar";
 import { Skeleton } from "../../../Components/Loader";
+import { responseToast } from "../../../utils/features";
 
 const defaultData: Order = {
   shippingInfo: {
@@ -153,7 +153,7 @@ const ProductCard = ({
   productId,
 }: OrderItem) => (
   <div className="transaction-product-card">
-    <img src={transformImage(photo)} alt={name} />
+    <img src={photo} alt={name} />
     <Link to={`/product/${productId}`}>{name}</Link>
     <span>
       ₹{price} X {quantity} = ₹{price * quantity}

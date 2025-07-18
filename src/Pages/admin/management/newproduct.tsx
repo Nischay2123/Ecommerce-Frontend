@@ -73,16 +73,6 @@ const NewProduct = () => {
             </div>
 
             <div>
-              <label>Description</label>
-              <textarea
-                required
-                placeholder="Description"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              />
-            </div>
-
-            <div>
               <label>Price</label>
               <input
                 required

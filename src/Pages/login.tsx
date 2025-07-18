@@ -35,13 +35,10 @@ const loginHandler = async () => {
     
     if ("data" in  res) {
       toast.success(res.data?.message || "Operation Successful");
-      // const data = await getUser(user.uid);
-      // dispatch(userExist(data?.user!));
     } else {
       const error = res.error as FetchBaseQueryError;
       const message = (error.data as MessageResponse).message;
       toast.error(message);
-    //   dispatch(userNotExist());
     }
   } catch (error) {
     toast.error("Sign In Fail");
@@ -64,7 +61,7 @@ const loginHandler = async () => {
             <>
             <h1 className="heading">Sign Up</h1>
             <div>
-                <label>Gender</label>
+                <label>Gender*</label>
                 <select value={gender} onChange={e=>setgender(e.target.value)}>
                 <option value="">Select Gneder</option>
                 <option value="male">Male</option>
@@ -72,19 +69,20 @@ const loginHandler = async () => {
                 </select>
             </div>
             <div>
-                <label>Date of birth</label>
+                <label>Date of birth*</label>
                 <input type="date" value={date} onChange={(e)=> setdate(e.target.value)}/>
             </div>
 
             <div>
-                <button onClick={loginHandler}>
-                    <FcGoogle/><span>Sign in with Google</span>
+                <label>Google Account*</label>
+                <button onClick={loginHandler} className="signup">
+                    <FcGoogle/><span>Sign up with Google</span>
                 </button>
             </div>
             </>}
             <div className="heading" >or</div>
             <div className="heading" style={{cursor:"pointer"}}
-            onClick={()=>setIsUserExist(!isUserExist)}> {isUserExist?"Login":"SignUp"}</div>
+            onClick={()=>setIsUserExist(!isUserExist)}> {isUserExist?"Sign Up":"Sign In"}</div>
             
         </main>
     </div>

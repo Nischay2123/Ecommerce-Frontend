@@ -8,7 +8,7 @@
 .create-product-btn {
   position: fixed;
   right: 2rem;
-  top: 2rem;
+  top: 4rem;
   @include square(2.5rem);
   @include flex(row, center, center, 0);
   border-radius: 50%;
@@ -35,7 +35,6 @@
 .product-management {
   @include flex(row, center, unset);
   padding: 4rem;
-
   > section {
     overflow-y: auto;
     width: 100%;
@@ -47,7 +46,9 @@
     @include flex(column, unset, unset, 1rem);
     position: relative;
     border-radius: 5px;
-
+    // >div{
+    //   height: 100%;
+    // }
     > h2 {
       @include heading(2px);
       text-align: center;
@@ -80,7 +81,7 @@
   }
 
   > article {
-    height: 85vh;
+    min-height: 85vh;
     padding: 2rem;
     width: 100%;
     max-width: 400px;

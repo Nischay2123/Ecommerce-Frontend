@@ -110,7 +110,7 @@ const Productmanagement = () => {
           <>
             <section>
               <strong>ID - {data?.product._id}</strong>
-              <img src={`${server}/${photo}`} alt="Product" />
+              <img src={photo} alt="Product" />
               <p>{name}</p>
               {stock > 0 ? (
                 <span className="green">{stock} Available</span>
@@ -135,14 +135,6 @@ const Productmanagement = () => {
                   />
                 </div>
 
-                <div>
-                  <label>Description</label>
-                  <textarea
-                    placeholder="Description"
-                    value={descriptionUpdate}
-                    onChange={(e) => setDescriptionUpdate(e.target.value)}
-                  />
-                </div>
                 <div>
                   <label>Price</label>
                   <input

@@ -1,6 +1,5 @@
 import { FaPlus } from "react-icons/fa";
 import { CartItem } from "../types/types";
-import { transformImage } from "../utils/features";
 
 type ProductsProps={
   productId: string;
@@ -15,7 +14,7 @@ type ProductsProps={
 const ProductCard = ({productId,photo,name,price,stock,handler,}:ProductsProps) => {
   return (
     <div className="product-card">
-      <img src={transformImage(photo)} alt={name} />
+      <img src={photo} alt={name} />
       <p>{name}</p>
       <span>${price}</span>
 
